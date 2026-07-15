@@ -43,8 +43,9 @@
   <article class="article-body">
 
     <div class="video-wrapper">
-      <video id="vsl-video" src="assets/videos/VSL.mp4" poster="assets/images/capa_vsl.png" autoplay muted playsinline></video>
-      <div id="sound-notice">🔊 Toque para ativar o som</div>
+      <vturb-smartplayer id="vid-6a57be2b9c18b45ec18dd5e5" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;">
+        <div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div>
+      </vturb-smartplayer>
     </div>
 
     <p>Foi durante o EAU Congress, um dos maiores encontros de urologia da Europa, realizado em Oslo, na Noruega, que o médico brasileiro Dr. Miguel Falcão teve contato pela primeira vez com um protocolo pouco conhecido fora do continente europeu. Há 22 anos dedicado ao estudo da saúde masculina, o especialista viajou até a capital norueguesa em busca de atualizações científicas e encontrou algo que não esperava: um método com raízes na era Viking, ainda praticado hoje por milhões de homens em países escandinavos.</p>
@@ -68,41 +69,19 @@
 
 </main>
 
+<script type="text/javascript">
+  var s = document.createElement("script");
+  s.src = "https://scripts.converteai.net/03249418-9c1f-4092-9807-485b50152a69/players/6a57be2b9c18b45ec18dd5e5/v4/player.js";
+  s.async = true;
+  document.head.appendChild(s);
+</script>
+
 <script>
-  const video = document.getElementById('vsl-video');
-  const soundNotice = document.getElementById('sound-notice');
-
-  function unmuteVideo() {
-    video.muted = false;
-    video.play().catch(function () {});
-  }
-
-  function tryUnmute() {
-    unmuteVideo();
-    setTimeout(function () {
-      if (video.muted || video.paused) {
-        soundNotice.classList.add('visible');
-      }
-    }, 300);
-  }
-
-  setTimeout(tryUnmute, 2000);
-
-  soundNotice.addEventListener('click', function () {
-    unmuteVideo();
-    soundNotice.classList.remove('visible');
-  });
-
-  document.addEventListener('click', function onFirstClick() {
-    if (video.muted) unmuteVideo();
-    soundNotice.classList.remove('visible');
-    document.removeEventListener('click', onFirstClick);
-  });
-
   const buyContainer = document.getElementById('buy-button-container');
+  const player = document.getElementById('vid-6a57be2b9c18b45ec18dd5e5');
 
-  video.addEventListener('timeupdate', function () {
-    if (video.currentTime >= 462 && !buyContainer.classList.contains('visible')) {
+  player.addEventListener('time', function (e) {
+    if (e.detail.currentTime >= 462 && !buyContainer.classList.contains('visible')) {
       buyContainer.classList.add('visible');
     }
   });
