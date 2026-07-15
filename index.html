@@ -48,7 +48,7 @@
       </vturb-smartplayer>
     </div>
 
-    <div id="buy-button-container">
+    <div id="buy-button-container" class="hide">
       <a id="buy-button" href="https://pay.cakto.com.br/32m6jqu_979779" target="_blank" rel="noopener noreferrer">
         ✅ SIM! QUERO ACESSAR O MÉTODO AGORA POR R$27,99
       </a>
@@ -78,12 +78,24 @@
 
 <script>
   const buyContainer = document.getElementById('buy-button-container');
-  const player = document.getElementById('vid-6a57be2b9c18b45ec18dd5e5');
 
-  player.addEventListener('time', function (e) {
-    if (e.detail.currentTime >= 462 && !buyContainer.classList.contains('visible')) {
+  function revealBuyButton() {
+    requestAnimationFrame(function () {
       buyContainer.classList.add('visible');
+    });
+  }
+
+  const observer = new MutationObserver(function () {
+    if (getComputedStyle(buyContainer).display !== 'none') {
+      revealBuyButton();
+      observer.disconnect();
     }
+  });
+  observer.observe(buyContainer, { attributes: true, attributeFilter: ['class', 'style'] });
+
+  const player = document.querySelector('vturb-smartplayer');
+  player.addEventListener('player:ready', function () {
+    player.displayHiddenElements(462, ['.hide'], { persist: true });
   });
 </script>
 

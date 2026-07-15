@@ -165,8 +165,11 @@ body {
 }
 
 /* Buy button */
-#buy-button-container {
+.hide {
   display: none;
+}
+
+#buy-button-container {
   text-align: center;
   margin: 36px 0 12px;
   opacity: 0;
@@ -174,7 +177,6 @@ body {
 }
 
 #buy-button-container.visible {
-  display: block;
   opacity: 1;
 }
 
