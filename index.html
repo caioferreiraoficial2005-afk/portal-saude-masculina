@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Médico Brasileiro Traz da Noruega Método que Está Revolucionando a Performance Masculina no Brasil</title>
+<link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<header class="g1-header">
+  <div class="g1-header-inner">
+    <div class="g1-logo">g1</div>
+    <nav class="g1-nav">
+      <a href="#">Brasil</a>
+      <a href="#">Política</a>
+      <a href="#">Economia</a>
+      <a href="#">Saúde</a>
+      <a href="#">Mundo</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-container">
+
+  <span class="tag-especial">ESPECIAL PUBLICITÁRIO</span>
+
+  <h1 class="article-title">Médico Brasileiro Traz da Noruega Método que Está Revolucionando a Performance Masculina no Brasil</h1>
+
+  <p class="article-subtitle">Especialista descobriu em congresso europeu um ritual de 10 minutos usado desde a era Viking que está transformando a vida sexual de homens brasileiros, sem remédio, sem dependência</p>
+
+  <div class="article-meta">
+    <span class="article-author">Por Dr. Miguel Falcão</span>
+    <span class="article-date">07/06/2026</span>
+  </div>
+
+  <div class="share-buttons">
+    <button class="share-btn share-facebook" type="button">Facebook</button>
+    <button class="share-btn share-whatsapp" type="button">WhatsApp</button>
+    <button class="share-btn share-generic" type="button">Compartilhar</button>
+  </div>
+
+  <article class="article-body">
+
+    <div class="video-wrapper">
+      <video id="vsl-video" src="assets/videos/VSL.mp4" poster="assets/images/capa_vsl.png" autoplay muted playsinline></video>
+      <div id="sound-notice">🔊 Toque para ativar o som</div>
+    </div>
+
+    <p>Foi durante o EAU Congress, um dos maiores encontros de urologia da Europa, realizado em Oslo, na Noruega, que o médico brasileiro Dr. Miguel Falcão teve contato pela primeira vez com um protocolo pouco conhecido fora do continente europeu. Há 22 anos dedicado ao estudo da saúde masculina, o especialista viajou até a capital norueguesa em busca de atualizações científicas e encontrou algo que não esperava: um método com raízes na era Viking, ainda praticado hoje por milhões de homens em países escandinavos.</p>
+
+    <p>Segundo relatos apresentados durante o congresso, o ritual, que leva apenas 10 minutos para ser executado, vem sendo utilizado silenciosamente por gerações de homens no norte da Europa como parte de rotinas ligadas à vitalidade e ao desempenho físico. Curioso com os resultados relatados por colegas europeus, Dr. Miguel Falcão passou os meses seguintes estudando a fundo a prática, cruzando-a com literatura científica e observando seus efeitos em pacientes brasileiros que aceitaram testar o método sob acompanhamento médico.</p>
+
+    <p>Os resultados, segundo o próprio médico, superaram as expectativas iniciais. "O que mais me chamou atenção foi a simplicidade do processo e a ausência de qualquer substância química ou medicamento envolvido", afirma Falcão. Diante do que classificou como uma descoberta relevante para a saúde masculina no Brasil, o médico decidiu estruturar o conhecimento adquirido na Noruega em um formato acessível para reprodução segura, o que resultou no vídeo explicativo acima.</p>
+
+    <p>Após a repercussão entre os pacientes que tiveram acesso antecipado ao conteúdo, Dr. Miguel Falcão optou por disponibilizar o método completo em formato digital, permitindo que qualquer homem possa aprender e aplicar o ritual em casa, no seu próprio ritmo, sem a necessidade de consultas presenciais.</p>
+
+    <p>Para que o método pudesse alcançar o maior número possível de brasileiros, independentemente da condição financeira, o médico decidiu praticar um valor simbólico de acesso, muito abaixo do que normalmente cobraria por um protocolo desenvolvido a partir de anos de pesquisa e uma viagem internacional dedicada ao tema.</p>
+
+    <div id="buy-button-container">
+      <a id="buy-button" href="https://pay.cakto.com.br/32m6jqu_979779" target="_blank" rel="noopener noreferrer">
+        ✅ SIM! QUERO ACESSAR O MÉTODO AGORA POR R$27,99
+      </a>
+      <p class="buy-subtext">🔒 Pagamento 100% seguro · Acesso imediato · Sem mensalidade</p>
+    </div>
+
+  </article>
+
+</main>
+
+<script>
+  const video = document.getElementById('vsl-video');
+  const soundNotice = document.getElementById('sound-notice');
+
+  function unmuteVideo() {
+    video.muted = false;
+    video.play().catch(function () {});
+  }
+
+  function tryUnmute() {
+    unmuteVideo();
+    setTimeout(function () {
+      if (video.muted || video.paused) {
+        soundNotice.classList.add('visible');
+      }
+    }, 300);
+  }
+
+  setTimeout(tryUnmute, 2000);
+
+  soundNotice.addEventListener('click', function () {
+    unmuteVideo();
+    soundNotice.classList.remove('visible');
+  });
+
+  document.addEventListener('click', function onFirstClick() {
+    if (video.muted) unmuteVideo();
+    soundNotice.classList.remove('visible');
+    document.removeEventListener('click', onFirstClick);
+  });
+
+  const buyContainer = document.getElementById('buy-button-container');
+
+  video.addEventListener('timeupdate', function () {
+    if (video.currentTime >= 462 && !buyContainer.classList.contains('visible')) {
+      buyContainer.classList.add('visible');
+    }
+  });
+</script>
+
+</body>
+</html>
