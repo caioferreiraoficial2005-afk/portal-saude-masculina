@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Médico Brasileiro Traz da Noruega Método que Está Revolucionando a Performance Masculina no Brasil</title>
 <link rel="stylesheet" href="CSS/style.css">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1551692496740468');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1551692496740468&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -49,7 +67,7 @@
     </div>
 
     <div id="buy-button-container" class="hide">
-      <a id="buy-button" href="https://pay.cakto.com.br/32m6jqu_979779" target="_blank" rel="noopener noreferrer">
+      <a id="buy-button" href="https://pay.cakto.com.br/32m6jqu_979779" target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'InitiateCheckout', { content_name: 'Ritual Viking', value: 27.99, currency: 'BRL' })">
         ✅ SIM! QUERO ACESSAR O MÉTODO AGORA POR R$27,99
       </a>
       <p class="buy-subtext">🔒 Pagamento 100% seguro · Acesso imediato · Sem mensalidade</p>
@@ -82,6 +100,12 @@
   function revealBuyButton() {
     requestAnimationFrame(function () {
       buyContainer.classList.add('visible');
+      fbq('track', 'ViewContent', {
+        content_name: 'Ritual Viking',
+        content_category: 'Saude Masculina',
+        value: 27.99,
+        currency: 'BRL'
+      });
     });
   }
 
